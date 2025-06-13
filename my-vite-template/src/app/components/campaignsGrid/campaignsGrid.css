@@ -1,0 +1,34 @@
+.grid-container {
+  display: grid;
+  gap: 5%;
+  row-gap: 10%;
+  padding: 5% 5%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: calc(250px);
+  overflow-y: scroll;
+  height: 73vh;
+}
+
+@media (max-width: 1400px) {
+  .grid-container {
+    height: 77vh;
+  }
+}
+
+@media (max-width: 1200px) {
+  .grid-container {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    height: 85vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    height: 90vh;
+  }
+}

@@ -1,0 +1,37 @@
+.dialog-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  color: #00dddd !important;
+}
+
+mat-form-field {
+  width: 80%;
+}
+
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 60rem;
+  width: 100%;
+}
+
+.money-input {
+  text-align: right;
+}
+
+input.money-input::-webkit-outer-spin-button,
+input.money-input::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.money-input {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}

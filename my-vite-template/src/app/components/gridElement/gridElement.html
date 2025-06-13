@@ -1,0 +1,50 @@
+<div [id]="campaign.id" class="grid-element">
+  <div class="campaign-header">
+    <div class="campaign-header-left">
+      <span>{{campaign.campaignName}}</span>
+      <div
+        class="status"
+        [ngClass]="{'status-on': campaign.status === 'ON', 'status-off': campaign.status === 'OFF'}"
+      ></div>
+    </div>
+    <div class="action-buttons">
+      <button mat-icon-button (click)="openDialog(campaign)">
+        <mat-icon class="edit-icon">edit</mat-icon>
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Delete">
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="deleteCampaign(campaign)">
+          <span class="delete-campaign-text">Delete Campaign</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="grid-element-body">
+    <div class="keywords">
+      <span class="title">Keywords</span>
+      <div class="value">
+        <span class="chip" *ngFor="let keyword of campaign.keywords | slice:0:3"
+          >{{keyword}}</span
+        ><span *ngIf="campaign.keywords.length>3">...</span>
+      </div>
+    </div>
+    <div class="bid-amount">
+      <span class="title">Bid amount</span>
+      <span class="value">{{ campaign.bidAmount }} PLN</span>
+    </div>
+    <div class="campaign-fund">
+      <span class="title">Campaign fund</span>
+      <span class="value">{{ campaign.campaignFund }} PLN</span>
+    </div>
+    <div class="town">
+      <span class="title">Town</span>
+      <span class="value">{{ campaign.town }}</span>
+    </div>
+    <div class="radius">
+      <span class="title">Radius</span>
+      <span class="value">{{ campaign.radius }} km</span>
+    </div>
+  </div>
+</div>
